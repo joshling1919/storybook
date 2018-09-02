@@ -1,0 +1,11 @@
+{
+  "name": "navigation",
+  "version": "1.0.0",
+  "description": "Navigation components",
+  "main": "dist/index.js",
+  "author": "Joshua Ling",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.4.2"
+  }
+}
