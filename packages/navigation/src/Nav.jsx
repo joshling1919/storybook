@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const NavContainer = styled.ul`
+  list-style-type: none;
+`;
 
 const Nav = ({ links }) => (
-  <ul>
+  <NavContainer>
     {links.map(({ label, key, ...props }) => (
       <li key={key}>
         <a {...props}>
@@ -10,7 +15,7 @@ const Nav = ({ links }) => (
         </a>
       </li>
     ))}
-  </ul>
+  </NavContainer>
 );
 
 Nav.propTypes = {

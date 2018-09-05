@@ -18,3 +18,7 @@ development plan:
 1. make a side nav
 1. make a top nav
 1. import to joshlingaround, set up breakpoints. use top nav on smaller screen sizes
+
+one question I'll have to figure out:
+
+1. should all my components ship with a global style?
