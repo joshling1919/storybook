@@ -1,3 +1,5 @@
-import navigation from './navigation';
+import Navigation from './navigation';
+import FlashCards from './flash_cards';
 
-navigation(module);
+Navigation(module);
+FlashCards(module);
