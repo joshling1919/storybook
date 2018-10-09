@@ -1,5 +1,5 @@
 import Navigation from './navigation';
-import FlashCards from './flash_cards';
+import Cards from './cards';
 
 Navigation(module);
-FlashCards(module);
+Cards(module);
