@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-// https://www.w3schools.com/howto/howto_css_flip_card.asp
+// https://3dtransforms.desandro.com/card-flip
 
 const CardContainer = styled.div`
   background-color: transparent;
@@ -24,16 +24,36 @@ const CardContent = styled.div`
   transform-style: preserve-3d;
 `;
 
+const cardCSS = css`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+`;
+
+const FrontCard = styled.div`
+  ${cardCSS};
+  background-color: #bbb;
+  color: black;
+`;
+
+const BackCard = styled.div`
+  ${cardCSS};
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+`;
+
 const Card = () => (
   <CardContainer>
     <CardContent className="card-content">
-      <div className="flip-card-front">
+      <FrontCard>
         <h1>
 cool
         </h1>
-      </div>
+      </FrontCard>
 
-      <div className="flip-card-back">
+      <BackCard>
         <h1>
 John Doe
         </h1>
@@ -43,7 +63,7 @@ Architect & Engineer
         <p>
 We love that guy
         </p>
-      </div>
+      </BackCard>
     </CardContent>
   </CardContainer>
 );
