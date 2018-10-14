@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-// https://3dtransforms.desandro.com/card-flip
+// this should be exactly what I'm looking for: https://jsfiddle.net/pf4aemn7/
 
 const CardContainer = styled.div`
   background-color: transparent;
