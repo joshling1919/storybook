@@ -9,13 +9,10 @@ const CardContainer = styled.div`
   height: 200px;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
-
-  &:hover .card-content {
-    transform: rotateY(180deg);
-  }
 `;
 
 const CardContent = styled.div`
+  transform: ${props => (props.flip ? 'rotateY(180deg)' : 'none')};
   position: relative;
   width: 100%;
   height: 100%;
@@ -44,28 +41,34 @@ const BackCard = styled.div`
   transform: rotateY(180deg);
 `;
 
-const Card = () => (
-  <CardContainer>
-    <CardContent className="card-content">
-      <FrontCard>
-        <h1>
-cool
-        </h1>
-      </FrontCard>
+class Card extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      flip: false,
+    };
+  }
 
-      <BackCard>
-        <h1>
-John Doe
-        </h1>
-        <p>
-Architect & Engineer
-        </p>
-        <p>
-We love that guy
-        </p>
-      </BackCard>
-    </CardContent>
-  </CardContainer>
-);
+  toggleClass = () => this.setState({ flip: true });
+
+  render() {
+    const { flip } = this.state;
+    return (
+      <CardContainer onClick={this.toggleClass}>
+        <CardContent flip={flip} className="card-content">
+          <FrontCard>
+            <h1>cool</h1>
+          </FrontCard>
+
+          <BackCard>
+            <h1>John Doe</h1>
+            <p>Architect & Engineer</p>
+            <p>We love that guy</p>
+          </BackCard>
+        </CardContent>
+      </CardContainer>
+    );
+  }
+}
 
 export default Card;
