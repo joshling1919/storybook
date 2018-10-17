@@ -49,7 +49,7 @@ class Card extends React.Component {
     };
   }
 
-  toggleClass = () => this.setState({ flip: true });
+  toggleClass = () => this.setState({ flip: !this.state.flip });
 
   render() {
     const { flip } = this.state;
