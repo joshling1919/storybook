@@ -22,3 +22,7 @@ development plan:
 one question I'll have to figure out:
 
 1. should all my components ship with a global style?
+
+next steps:
+
+1. how should text editing work for card creation?
